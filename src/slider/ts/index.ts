@@ -16,7 +16,7 @@ export class Slider {
 
   private itemSize = this.$items.length;
   private maxIndex = Math.floor(this.itemSize / 2);
-  private minIndex = (this.itemSize % 2) === 0 ? -(this.maxIndex - 1) : -this.maxIndex; 
+  private minIndex = this.hasItemsEven() ? -(this.maxIndex - 1) : -this.maxIndex; 
 
   constructor() {
     this.bindEvents();
@@ -57,19 +57,24 @@ export class Slider {
   }
 
   private setCurrent(): void {
+    const diff = this.hasItemsEven() ? -this.minIndex : this.maxIndex;
     this.$items.removeClass(CSS_CLASSNAME_CURRENT);
-    this.$items.eq(this.currentIndex + 1).addClass(CSS_CLASSNAME_CURRENT);
+    this.$items.eq(this.currentIndex + diff).addClass(CSS_CLASSNAME_CURRENT);
   }
 
   private setLeftPosition(): void {
     let left: string;
-    if ((this.itemSize % 2) === 0) {
+    if (this.hasItemsEven()) {
       left = `calc(50% + ${(ITEM_WIDTH + ITEM_MARGIN) / 2}px)`;
     } else {
       left = '50%';
     }
 
     this.$slider.css({ left });
+  }
+
+  private hasItemsEven(): boolean {
+    return (this.itemSize % 2) === 0;
   }
 }
 
