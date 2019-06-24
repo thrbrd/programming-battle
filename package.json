@@ -12,7 +12,7 @@
     "typescript": "^3.5.2"
   },
   "scripts": {
-    "watch": "parcel index.html"
+    "watch": "parcel **/index.html"
   },
   "dependencies": {
     "jquery": "^3.4.1"
