@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 
 class Drawer {
   private $drawer = $('#jsi-drawer');
@@ -13,16 +13,22 @@ class Drawer {
   private bindEvents(): void {
     this.$openTrigger.on('click', () => this.open());
     this.$closeTrigger.on('click', () => this.close());
+    this.$filter.on('click', () => this.close());
   }
 
   private open(): void {
     this.$drawer.addClass('is-opened');
-    this.$filter.stop().fadeIn(600);
+    this.$filter.addClass('is-displayed');
+    setTimeout(() => this.$filter.addClass('is-opened'));
   }
 
   private close(): void {
     this.$drawer.removeClass('is-opened');
-    this.$filter.stop().fadeOut(600);
+    this.$filter.removeClass('is-opened');
+    this.$filter.on('transitionend', () => {
+      this.$filter.removeClass('is-displayed');
+      this.$filter.off('transitionend');
+    });
   }
 }
 
