@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #FFFFFF;
+}
+
+body {
+  color: #666666;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  > a {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #6699FF;
+    color: #FFFFFF;
+  }
+}

@@ -25,10 +25,12 @@ class Accordion {
   private open(): void {
     const height = this.$content[0].scrollHeight;
     this.$content.height(height);
+    this.isOpen = true;
   }
 
   private close(): void {
     this.$content.height(0);
+    this.isOpen = false;
   }
 }
 

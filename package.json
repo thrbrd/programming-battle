@@ -14,7 +14,8 @@
   "scripts": {
     "watch": "parcel **/index.html",
     "watch:drawer": "parcel src/drawer/index.html",
-    "watch:accordion": "parcel src/accordion/index.html"
+    "watch:accordion": "parcel src/accordion/index.html",
+    "watch:rtech": "parcel src/rtech/index.html"
   },
   "dependencies": {
     "jquery": "^3.4.1"

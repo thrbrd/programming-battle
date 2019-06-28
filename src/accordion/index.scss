@@ -39,6 +39,9 @@ h1 {
 }
 
 .accordion {
+  list-style: none;
+  color: #333333;
+
   & + .accordion {
     border-top: 1px solid #CCCCCC;
   }
@@ -49,6 +52,8 @@ h1 {
     font-weight: bold;
     background-color: #FFFFFF;
     transition: 300ms cubic-bezier(0.19, 1, 0.22, 1);
+    color: #333333;
+    text-decoration: none;
 
     &:hover {
       background-color: #CCCCCC;
@@ -59,6 +64,7 @@ h1 {
     height: 0;
     overflow: hidden;
     transition: 300ms cubic-bezier(0.19, 1, 0.22, 1);
+    line-height: 1.6;
 
     &-inner {
       padding: 30px 60px;
